@@ -5,10 +5,16 @@ var cheerio = require("cheerio");
 var phantom = require("phantom");
 const util = require('util');
 let bot = linebot({
-    channelId: '1511876385',
-    channelSecret: 'c6e4c7aadff9c795ac2d18ad56fc36cf',
-    channelAccessToken: 'VkVYO1PZY9uGKGe8KK4Jr+HiUJqYjRj44pvK4Bt16cSn664s6l4MREDThTK4V2xICIsN6WHEz5fQbR6cEJC1/A/pfhpGg3knwiu1pT2qVYf5FEORD4HgfNQ8f/0yyyQd8jYkQss3zfdCV/Nc/HtgFgdB04t89/1O/w1cDnyilFU='
+   // channelId: '1511876385',
+   // channelSecret: 'c6e4c7aadff9c795ac2d18ad56fc36cf',
+   // channelAccessToken: 'VkVYO1PZY9uGKGe8KK4Jr+HiUJqYjRj44pvK4Bt16cSn664s6l4MREDThTK4V2xICIsN6WHEz5fQbR6cEJC1/A/pfhpGg3knwiu1pT2qVYf5FEORD4HgfNQ8f/0yyyQd8jYkQss3zfdCV/Nc/HtgFgdB04t89/1O/w1cDnyilFU='
+    channelId: '1522300741',
+    channelSecret: '455f74dac591d18ede2d996eb202f440',
+    channelAccessToken:'PMYTOjEFFN7ZnBSMDdKUmtgkjod7Xkukm4g2LNyFGB7q6FsPFym2zhiUsN7GWbb5DkJEV1nPsOqmvZ81MaUTUdokXu0pxd/ZM9Vt5nxGdghJkveeo2MfWR7mhY6EuSfMv94qG6rZmkDPLn2Cz+ik1QdB04t89/1O/w1cDnyilFU='
+
 });
+
+
 const linebotParser = bot.parser();
 const app = express();
 var timer;
