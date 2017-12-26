@@ -28,6 +28,16 @@ function _bot() {
         // 把收到訊息的 event 印出來
         var msg = "groupId:" + event.source.groupId + "  userId:" + event.source.userId + " text:" + event.message.text;
 
+        if (event.message.type = 'text') {
+            var msg = event.message.text;
+            event.reply(msg).then(function(data) {
+                // success
+                console.log(msg);
+            }).catch(function(error) {
+                // error
+                console.log('error');
+            });
+        }
         console.log(msg);
     });
 
