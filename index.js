@@ -13,12 +13,20 @@ let bot = linebot({
     channelAccessToken:'PMYTOjEFFN7ZnBSMDdKUmtgkjod7Xkukm4g2LNyFGB7q6FsPFym2zhiUsN7GWbb5DkJEV1nPsOqmvZ81MaUTUdokXu0pxd/ZM9Vt5nxGdghJkveeo2MfWR7mhY6EuSfMv94qG6rZmkDPLn2Cz+ik1QdB04t89/1O/w1cDnyilFU='
 
 });
+let bot2 = linebot({
+     channelId: '1511876385',
+     channelSecret: 'c6e4c7aadff9c795ac2d18ad56fc36cf',
+     channelAccessToken: 'VkVYO1PZY9uGKGe8KK4Jr+HiUJqYjRj44pvK4Bt16cSn664s6l4MREDThTK4V2xICIsN6WHEz5fQbR6cEJC1/A/pfhpGg3knwiu1pT2qVYf5FEORD4HgfNQ8f/0yyyQd8jYkQss3zfdCV/Nc/HtgFgdB04t89/1O/w1cDnyilFU='
+
+});
 
 
 const linebotParser = bot.parser();
+const linebotParser2 = bot2.parser();
 const app = express();
 var timer;
 app.post('/webhook', linebotParser);
+app.post('/webhook2', linebotParser2);
 
 pcHome();
 _bot();
@@ -41,7 +49,21 @@ function _bot() {
 
         console.log(msg);
     });
+    bot2.on('message', function (event) {
+        // 把收到訊息的 event 印出來
+        var msg = "groupId:" + event.source.groupId + "  userId:" + event.source.userId + " text:" + event.message.text;
+        if (event.message.type = 'text') {
+            event.reply(msg).then(function(data) {
+                // success
+                console.log(msg);
+            }).catch(function(error) {
+                // error
+                console.log('error');
+            });
+        }
 
+        console.log(msg);
+    });
 // 在 localhost 走 8080 port
     let server = app.listen(process.env.PORT || 8080, function () {
         let port = server.address().port;
