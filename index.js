@@ -49,11 +49,11 @@ function _bot() {
 
         console.log(msg);
     });
-    bot2.on('message', function (event) {
+    bot2.on('message', function (event2) {
         // 把收到訊息的 event 印出來
-        var msg = "groupId:" + event.source.groupId + "  userId:" + event.source.userId + " text:" + event.message.text;
-        if (event.message.type = 'text') {
-            event.reply(msg).then(function(data) {
+        var msg = "groupId:" + event2.source.groupId + "  userId:" + event2.source.userId + " text:" + event2.message.text;
+        if (event2.message.text === 'info') {
+            event2.reply(msg).then(function(data) {
                 // success
                 console.log(msg);
             }).catch(function(error) {
