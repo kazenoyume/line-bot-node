@@ -38,6 +38,7 @@ function _bot() {
                 console.log('error');
             });
         }
+
         console.log(msg);
     });
 
@@ -92,5 +93,5 @@ function pcHome() {
         _ph.exit();
 
     });
-    timer = setInterval(pcHome, 60000); //每半小時抓取一次新資料
+    timer = setInterval(pcHome, 10*60*1000); //每半小時抓取一次新資料
 };
