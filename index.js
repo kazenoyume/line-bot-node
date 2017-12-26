@@ -75,7 +75,7 @@ function pcHome() {
         $('#ItemContainer .col3f .c3f .fieldset_box .site_btn').each(function (i, elem) {
             if ($(this).text().split('\n').indexOf('購物車') >= 0) {
                 console.log($(this).text().split('\n'));
-                sendLine('有貨 ' + urlString, 'Ued66e12d2e4fa25fd056078d44170a41');
+                bot.push('Ued66e12d2e4fa25fd056078d44170a41', '有貨 ' + urlString);
             } else {
                 var date = new Date();
                 console.log('時間:' + date + '--缺貨');
