@@ -13,7 +13,7 @@ var sendLine = function (result, uid) {
         });
 };
 
-module.exports = function () {
+module.exports = function (status) {
     var agent = getAgent();
     request(
         {
@@ -36,9 +36,22 @@ module.exports = function () {
                 var date = new Date();
 
                 console.log('時間:' + date + '--缺貨');
-                if (titles[i].children[0].data != '缺貨中加入貨到通知') {
-                    sendLine('有貨 ' + "https://store.sony.com.tw/product/show/8a818bb95f810c49015fe76ee08a0d94", 'Uaa0637612b1059d6b2d584a2b5bd2889');
+                if(status===1){
+
+                    if (titles[i].children[0].data != '缺貨中加入貨到通知') {
+                        sendLine('有貨 ' + "https://store.sony.com.tw/product/show/8a818bb95f810c49015fe76ee08a0d94", 'Uaa0637612b1059d6b2d584a2b5bd2889');
+                    }else{
+
+                        sendLine('缺貨 ' + "https://store.sony.com.tw/product/show/8a818bb95f810c49015fe76ee08a0d94", 'Uaa0637612b1059d6b2d584a2b5bd2889');
+
+                    }
+                }else{
+
+                    if (titles[i].children[0].data != '缺貨中加入貨到通知') {
+                        sendLine('有貨 ' + "https://store.sony.com.tw/product/show/8a818bb95f810c49015fe76ee08a0d94", 'Uaa0637612b1059d6b2d584a2b5bd2889');
+                    }
                 }
+
             }
         });
 };

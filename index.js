@@ -24,7 +24,7 @@ app.post('/webhook', linebotParser);
 app.post('/webhook2', linebotParser2);
 
 
-ps4();
+ps4(0);
 setInterval(ps4,5*60*1000);
 
 _bot();
@@ -44,6 +44,17 @@ function _bot() {
                 console.log('error');
             });
         }
+        if (event.message.text === 'now') {
+            event.reply(msg).then(function(data) {
+                // success.
+                ps4(1);
+                console.log(msg);
+            }).catch(function(error) {
+                // error
+                console.log('error');
+            });
+        }
+
 
         console.log(msg);
     });
