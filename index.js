@@ -4,6 +4,7 @@ let linebot = require('linebot'),
 
 var pchome = require('./phantomCrawler.js');
 var ps4 = require('./normalCrawler.js');
+var baha = require('./normalCrawlerBaHa.js');
 let bot2 = linebot({
     channelId: '1511876385',
     channelSecret: 'c6e4c7aadff9c795ac2d18ad56fc36cf',
@@ -23,10 +24,11 @@ const app = express();
 app.post('/webhook', linebotParser);
 app.post('/webhook2', linebotParser2);
 
-
+/*
 ps4(0);
-setInterval(ps4,5*60*1000);
-
+setInterval(ps4,5*60*1000);*/
+baha(0);
+setInterval(baha,5*60*1000);
 _bot();
 
 function _bot() {
@@ -47,7 +49,8 @@ function _bot() {
         if (event.message.text === 'now') {
             event.reply(msg).then(function(data) {
                 // success.
-                ps4(1);
+                //ps4(1);
+                baha(1);
                 console.log(msg);
             }).catch(function(error) {
                 // error
