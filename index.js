@@ -27,8 +27,8 @@ app.post('/webhook2', linebotParser2);
 /*
 ps4(0);
 setInterval(ps4,5*60*1000);*/
-baha(0);
-setInterval(baha,5*60*1000);
+//baha(0);
+//setInterval(baha,5*60*1000);
 _bot();
 
 function _bot() {
